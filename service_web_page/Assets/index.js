@@ -21,5 +21,23 @@ form.addEventListener("submit", function
             status.classList.remove("success");
             status.classList.add("error");
         }
+    });
+    
+        // Smooth scroll for Navigation links
 
+
+    // Smooth scroll for Navigation links
+    document.querySelectorAll('.nav-list a').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const section = document.querySelector(this.getAttribute('href'));
+            section.scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Scroll to services when hero button is clicked
+    document.querySelector('.hero .btn').addEventListener('click', () => {
+       document.querySelector(".services").scrollIntoView({ behavior: 'smooth' });
     });
